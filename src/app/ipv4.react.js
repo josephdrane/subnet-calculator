@@ -1,25 +1,42 @@
-import 'bootstrap/dist/css/bootstrap.css';
-import React, { Component } from 'react';
+// @flow
 
-class Ipv4Calc extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			ipaddress: '0.0.0.0',
-			cidr_netmask: '',
-			cidr_mask_bits: '',
-			inverted_mask: '',
-			cidr_max_subnets: '',
-			max_addresses: '',
-			cidr_network: '',
-			net_cidr_notation: '',
-			cidr_addr_range: ''
-		};
-		this.onChangeIpaddress = this.onChangeIpaddress.bind(this);
-	}
+import * as React from 'react';
 
-	onChangeIpaddress(event) {
-		this.setState({ ipaddress: event.target.value });
+type Props = {
+	/* ... */
+};
+
+type State = {
+	ipaddress: string,
+	cidr_netmask: string,
+	cidr_mask_bits: string,
+	inverted_mask: string,
+	cidr_max_subnets: string,
+	max_addresses: string,
+	cidr_network: string,
+	net_cidr_notation: string,
+	cidr_addr_range: string
+};
+
+class Ipv4Calc extends React.Component<Props, State> {
+	state: State = {
+		ipaddress: '0.0.0.0',
+		cidr_netmask: '',
+		cidr_mask_bits: '',
+		inverted_mask: '',
+		cidr_max_subnets: '',
+		max_addresses: '',
+		cidr_network: '',
+		net_cidr_notation: '',
+		cidr_addr_range: ''
+	};
+
+	onChangeIpaddress(event: Event) {
+		if (event.target instanceof HTMLInputElement) {
+			this.setState({ ipaddress: event.target.value });
+		} else {
+			this.setState({ ipaddress: '0.0.0.0' });
+		}
 	}
 
 	render() {
