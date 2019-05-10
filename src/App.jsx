@@ -1,9 +1,8 @@
-/* eslint-disable no-tabs */
 // @flow
 
 import React from 'react';
 import './App.css';
-import Ipv4Calc from './app/ipv4.react';
+import Ipv4App from './app/ipv4.react';
 import Navigation from './app/navigation.react';
 
 function App() {
@@ -16,7 +15,7 @@ function App() {
         <br />
       </div>
       <content className="">
-        <Ipv4Calc />
+        <Ipv4App />
       </content>
     </div>
   );
