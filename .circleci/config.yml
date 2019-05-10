@@ -3,7 +3,9 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
+
 jobs:
+
   build:
     docker:
       # specify the version you desire here
@@ -38,24 +40,24 @@ jobs:
       - run: npm test
       - run: npm run build
 
-deploy-job:
-  docker:
-    - image: my-image-version-tag
-  working_directory: /tmp/my-project
-  steps:
-    - run:
-        name: Deploy Master to Firebase
-        command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_DEPLOY_TOKEN
+  deploy-job:
+    docker:
+      - image: my-image-version-tag
+    working_directory: /tmp/my-project
+    steps:
+      - run:
+          name: Deploy Master to Firebase
+          command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_DEPLOY_TOKEN
 
 workflows:
   version: 2
 
   -deploy:
     jobs:
-      - build-job
+      - build
       - deploy-job:
           requires:
-            - build-job
+            - build
           filters:
             branches:
               only: master
