@@ -9,17 +9,17 @@
 [ x ] onchange function runs
 [  ] onchange function validates IP Address entered
 [ x ] sets state of ipaddress and subnet mask
-[  ] then runs code to figure out results and also sets state for those items
-[  ] make functions to get the result based off the inputs
-[  ] and even the outputs of other functions
+[ x ] then runs code to figure out results and also sets state for those items
+[ x ] make functions to get the result based off the inputs
+[ x ] and even the outputs of other functions
 
 =================================================================
 
 # outputs :
 
-[  ] network address
-[  ] address range
-[  ] total hosts
-[  ] total networks
-[  ] wildcard mask
-[  ] cidr notation
+[ x ] network address
+[ x ] address range
+[ x ] total hosts
+[ x ] total networks
+[ x ] wildcard mask
+[ n/a ] cidr notation
