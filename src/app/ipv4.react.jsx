@@ -75,7 +75,7 @@ class Ipv4App extends React.Component<Props, State> {
                 <label>IPv4 Address</label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control" id="App-responsive"
                   value={ipaddress}
                   onChange={this.onChangeIpaddress}
                   maxLength="15"
@@ -84,7 +84,7 @@ class Ipv4App extends React.Component<Props, State> {
 
               <div className="form-group col">
                 <label>Subnet Mask</label>
-                <select className="form-control" value={bitMask} onChange={this.onChangeMask}>
+                <select className="form-control" id="App-responsive" value={bitMask} onChange={this.onChangeMask}>
                   <option value="1">128.0.0.0 --- /1</option>
                   <option value="2">192.0.0.0 --- /2</option>
                   <option value="3">224.0.0.0 --- /3</option>
@@ -131,25 +131,25 @@ class Ipv4App extends React.Component<Props, State> {
                   value={networkAddressRange}
                   size="30"
                   readOnly
-                  className="form-control"
+                  className="form-control" id="App-responsive"
                 />
               </div>
 
               <div className="form-group col">
                 <label>Total Hosts</label>
-                <input type="text" value={maxHosts} size="20" readOnly className="form-control" />
+                <input type="text" value={maxHosts} size="20" readOnly className="form-control" id="App-responsive" />
               </div>
             </div>
 
             <div className="form-row">
               <div className="form-group col">
                 <label>Wildcard Mask</label>
-                <input type="text" value={wildcardMask} size="20" readOnly className="form-control" />
+                <input type="text" value={wildcardMask} size="20" readOnly className="form-control" id="App-responsive" />
               </div>
 
               <div className="form-group col">
                 <label>Possible Subnets</label>
-                <input type="text" value={maxSubnets} size="20" readOnly className="form-control" />
+                <input type="text" value={maxSubnets} size="20" readOnly className="form-control" id="App-responsive" />
               </div>
             </div>
           </form>
