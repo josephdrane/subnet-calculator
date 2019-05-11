@@ -14,7 +14,7 @@ function App() {
       <div className="row">
         <br />
       </div>
-      <content className="">
+      <content className="App-content">
         <Ipv4App />
       </content>
     </div>
