@@ -15,7 +15,8 @@ type State = {
     wildcardMask: string,
     maxSubnets: string,
     maxHosts: string,
-    networkAddressRange: string
+    networkAddressRange: string,
+    network: string
 };
 
 class Ipv4App extends React.Component<Props, State> {
@@ -26,6 +27,7 @@ class Ipv4App extends React.Component<Props, State> {
       maxSubnets: '256',
       maxHosts: '254',
       networkAddressRange: '10.0.0.1 - 10.0.0.254',
+      network: '10.0.0.0',
     };
 
     onChangeIpaddress = (event: Event) => {
@@ -60,12 +62,13 @@ class Ipv4App extends React.Component<Props, State> {
         maxSubnets: calc.result.maxSubnets,
         maxHosts: calc.result.maxHosts,
         networkAddressRange: calc.result.networkAddressRange,
+        network: calc.result.network,
       });
     };
 
     render() {
       const {
-        ipaddress, bitMask, wildcardMask, maxSubnets, maxHosts, networkAddressRange,
+        ipaddress, bitMask, wildcardMask, maxSubnets, maxHosts, networkAddressRange, network,
       } = this.state;
       return (
         <div className="container">
@@ -77,7 +80,6 @@ class Ipv4App extends React.Component<Props, State> {
                   type="text"
                   className="form-control"
                   id="App-responsive"
-                  className="form-control" id="App-responsive"
                   value={ipaddress}
                   onChange={this.onChangeIpaddress}
                   maxLength="15"
@@ -92,7 +94,6 @@ class Ipv4App extends React.Component<Props, State> {
                   value={bitMask}
                   onChange={this.onChangeMask}
                 >
-                <select className="form-control" id="App-responsive" value={bitMask} onChange={this.onChangeMask}>
                   <option value="1">128.0.0.0 --- /1</option>
                   <option value="2">192.0.0.0 --- /2</option>
                   <option value="3">224.0.0.0 --- /3</option>
@@ -133,15 +134,14 @@ class Ipv4App extends React.Component<Props, State> {
 
             <div className="form-row">
               <div className="form-group col">
-                <label>Usable Address Range</label>
+                <label>Network Address</label>
                 <input
                   type="text"
-                  value={networkAddressRange}
+                  value={network}
                   size="30"
                   readOnly
                   className="form-control"
                   id="App-responsive"
-                  className="form-control" id="App-responsive"
                 />
               </div>
 
@@ -155,7 +155,6 @@ class Ipv4App extends React.Component<Props, State> {
                   className="form-control"
                   id="App-responsive"
                 />
-                <input type="text" value={maxHosts} size="20" readOnly className="form-control" id="App-responsive" />
               </div>
             </div>
 
@@ -170,7 +169,6 @@ class Ipv4App extends React.Component<Props, State> {
                   className="form-control"
                   id="App-responsive"
                 />
-                <input type="text" value={wildcardMask} size="20" readOnly className="form-control" id="App-responsive" />
               </div>
 
               <div className="form-group col">
@@ -183,7 +181,20 @@ class Ipv4App extends React.Component<Props, State> {
                   className="form-control"
                   id="App-responsive"
                 />
-                <input type="text" value={maxSubnets} size="20" readOnly className="form-control" id="App-responsive" />
+              </div>
+            </div>
+
+            <div className="form-row">
+              <div className="form-group col">
+                <label>Usable Address Range</label>
+                <input
+                  type="text"
+                  value={networkAddressRange}
+                  size="30"
+                  readOnly
+                  className="form-control"
+                  id="App-responsive"
+                />
               </div>
             </div>
           </form>
