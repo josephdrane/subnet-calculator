@@ -39,6 +39,14 @@ jobs:
       # run tests!
       - run: npm test
       - run: npm run build
+<<<<<<< HEAD
+=======
+
+  deploy-job:
+    docker:
+      - image: circleci/node:latest
+    steps:
+>>>>>>> 98f1bad8fba32d8171fe14a0dcb78cb7d2fab8b2
       - run:
           name: 'Deploy to Firebase Hosting'
           command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
