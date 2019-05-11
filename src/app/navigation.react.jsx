@@ -11,14 +11,14 @@ const Navigation = () => (
   <nav className="navbar">
     <a className="navbar-brand text-white" href="https://subnet.help">
       <img src={logo} className="App-logo" alt="logo" />
-			Subnet Calculator
+            Subnet Calculator
     </a>
     <form className="form-inline">
-      <a className="btn btn-dark" href="https://github.com/josephdrane">
-				Github
+      <a className="btn btn-dark" href="https://github.com/josephdrane/subnet-calculator">
+                Source Code
       </a>
       <a className="btn btn-dark" href="https://linkedin.com/in/josephdrane">
-				LinkedIn
+                Creator
       </a>
     </form>
   </nav>

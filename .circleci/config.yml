@@ -40,17 +40,10 @@ jobs:
       - run: npm test
       - run: npm run build
 
-      - persist_to_workspace:
-        root: .
-        paths:
-          - .
-
   deploy-job:
-    - attach_workspace:
-            at: .
     docker:
       - image: circleci/node:latest
-    working_directory: /tmp/app
+    working_directory: ~/repo
     steps:
       - run:
           name: Deploy Master to Firebase
