@@ -41,8 +41,8 @@ jobs:
       - run: npm run build
 
       - persist_to_workspace:
-      root: .
-      paths:
+        root: .
+        paths:
           - .
 
   deploy-job:
