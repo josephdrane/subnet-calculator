@@ -43,7 +43,11 @@ jobs:
   deploy-job:
     docker:
       - image: circleci/node:latest
+<<<<<<< HEAD
     working_directory: /tmp/app/
+=======
+    working_directory: ~/repo
+>>>>>>> 18bd4f813ee9e46ab3dabedb33b4f35b5992e1bb
     steps:
       - run:
           name: Deploy Master to Firebase
