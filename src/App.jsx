@@ -4,6 +4,7 @@ import React from 'react';
 import './App.css';
 import Ipv4App from './app/ipv4.react';
 import Navigation from './app/navigation.react';
+import Footer from './app/footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <content className="App-content">
         <Ipv4App />
       </content>
+      <Footer />
     </div>
   );
 }

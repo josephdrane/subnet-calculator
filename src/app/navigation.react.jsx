@@ -13,14 +13,6 @@ const Navigation = () => (
       <img src={logo} className="App-logo" alt="logo" />
             Subnet Calculator
     </a>
-    <form className="form-inline">
-      <a className="btn btn-dark" href="https://github.com/josephdrane/subnet-calculator">
-                Source Code
-      </a>
-      <a className="btn btn-dark" href="https://linkedin.com/in/josephdrane">
-                Creator
-      </a>
-    </form>
   </nav>
   //   </div>
 );
