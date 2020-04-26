@@ -8,8 +8,8 @@ import logo from '../img/logo.svg';
 
 const Navigation = () => (
   //   <div className="mb-4">
-  <nav className="navbar">
-    <a className="navbar-brand text-white" href="https://subnet.help">
+  <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a className="navbar-brand h-25 text-white" href="https://subnet.help">
       <img src={logo} className="App-logo" alt="logo" />
             Subnet Calculator
     </a>
